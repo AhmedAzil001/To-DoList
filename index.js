@@ -8,6 +8,8 @@ JSON.parse(localStorage.getItem("task")) : [];
 
 showAllTasks();
 
+const clicked=false;
+
 function showAllTasks(){
     tasks.forEach((value,index)=>{
         const div=document.createElement("div");
@@ -27,8 +29,25 @@ function showAllTasks(){
         inputDescription.innerText=value.description;
         innerDiv.append(inputDescription);
 
+        const checkBox=document.createElement("input");
+        checkBox.setAttribute("type","checkbox");
+        checkBox.setAttribute("class","checkbox");
+        div.append(checkBox);
+        checkBox.addEventListener("click",()=>{
+            if(checkBox.checked){
+                inputText.style.textDecoration="line-through";
+                inputDescription.style.textDecoration='line-through'
+            }else{
+                inputText.style.textDecoration='none'
+                inputDescription.style.textDecoration='none'
+            }
+            
+        })
+
         const iconDelete=document.createElement("i");
         iconDelete.setAttribute("class","fa-solid fa-trash");
+
+        
 
         const btnDelete=document.createElement("button");
         btnDelete.setAttribute("class","btn");

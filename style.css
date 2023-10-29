@@ -95,6 +95,18 @@ button {
   color: rgb(116, 108, 108);
 }
 
+.checkbox{
+  width: 5%;
+}
+
+.checkBoxCrossed{
+  text-decoration: line-through;
+}
+
+.checkbox:hover{
+    transform: scale(1.5);
+}
+
 .InDes {
   padding: 1px;
   width: 100%;
